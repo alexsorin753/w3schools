@@ -1,15 +1,77 @@
 * {
   box-sizing: border-box;
 }
+html {
+  position: relative;
+  min-height: 100%;
+}
 html, body {
+  scroll-behavior: smooth;
   font-size: 62.5%;
 }
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: blanchedalmond;
+  margin: 0;
 }
 
 a {
   color: #00B7FF;
+}
+header {
+  background: rgb(4,170,109);
+  background: linear-gradient(34deg, rgba(4,170,109,1) 0%, rgba(13,139,242,1) 100%);
+}
+.title {
+  height: 14rem;
+  position: relative;
+}
+.title > a {
+  text-decoration: none;
+  position: absolute;
+  margin: 0;
+  left: 50%;
+  top: 50%;
+  font-size: 3rem;
+  transform: translate(-50%, -50%);
+  color: white;
+  cursor: pointer;
+}
+.menu {
+  display: flex;
+  font-size: 2rem;
+  border-top: 1px solid white;
+}
+.menu a {
+  text-decoration: none;
+  width: 12.5%;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: .7rem;
+  color: white;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom .1s;
+}
+.menu a:hover {
+  border-bottom: 3px solid orange;
+}
+
+.to_top_button {
+  font-size: 4rem;
+  position: fixed;
+  cursor: pointer;
+  right: -3rem;
+  bottom: 5rem;
+}
+
+body > p {
+  height: 100rem;
+}
+
+footer {
+  height: 5rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: rgb(4,170,109);
+  background: linear-gradient(34deg, rgba(4,170,109,1) 0%, rgba(13,139,242,1) 100%);
 }

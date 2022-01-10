@@ -1,10 +1,26 @@
 doctype html
 html
   head
+    // title variable is in index.js
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/javascripts/main_script.js')
   body
     header
+      div.title
+        a(href='/') W3Schools How To
+      div.menu
+        a(href='/menu') Menu 
+        a(href='/images') Images 
+        a(href='/buttons') Buttons
+        a(href='/forms') Forms 
+        a(href='/filters') Filters 
+        a(href='/tables') Tables 
+        a(href='/more') More 
+        a(href='/other') Other
+
     block content
+    
+    .to_top_button &#8686;
+
     footer

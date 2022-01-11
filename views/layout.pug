@@ -4,12 +4,14 @@ html
     // title variable is in index.js
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    block styles_bl
     script(src='/javascripts/main_script.js')
+    block script_bl
   body
     header
-      div.title
-        a(href='/') W3Schools How To
-      div.menu
+      .header_title
+        a(href='/') "W3Schools How To" practice
+      .header_menu
         a(href='/menu') Menu 
         a(href='/images') Images 
         a(href='/buttons') Buttons
@@ -24,3 +26,16 @@ html
     .to_top_button &#8686;
 
     footer
+      .footer_menu 
+        a(href='/menu') Menu 
+        a(href='/images') Images 
+        a(href='/buttons') Buttons
+        a(href='/forms') Forms 
+        a(href='/filters') Filters 
+        a(href='/tables') Tables 
+        a(href='/more') More 
+        a(href='/other') Other
+      .footer_contact 
+        a(href='#') Email
+        a(href='#') LinkedIn
+        a(href='#') Twitter

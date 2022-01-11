@@ -8,6 +8,10 @@ window.onload = function() {
 
 function to_top() {
     const button = document.querySelector('.to_top_button');
+
+    if(window.scrollY > 150) button.style.right = '2rem';
+    else button.style.right = '-3rem';
+
     window.addEventListener('scroll', function() {
         if(this.scrollY > 150) {
             button.animate([{

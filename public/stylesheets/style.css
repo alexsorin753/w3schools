@@ -28,7 +28,6 @@ header {
   color: white;
   cursor: pointer;
 }
-
 .header_menu {
   display: flex;
   font-size: 1.8rem;
@@ -42,7 +41,7 @@ header {
   padding-bottom: .7rem;
   color: white;
   border-bottom: 3px solid transparent;
-  transition: border-bottom .1s;
+  transition: border-bottom .3s;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
 }
 .header_menu a:hover {
@@ -83,6 +82,7 @@ footer a {
   color: white;
   text-decoration: none;
   padding: 0 1rem;
+  transition: color .3s;
 }
 .footer_menu, .footer_contact {
   position: absolute;
@@ -90,4 +90,7 @@ footer a {
 }
 .footer_contact {
   right: 2rem;
+}
+footer a:hover {
+  color: #06D6A0;
 }

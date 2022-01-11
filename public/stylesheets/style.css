@@ -41,19 +41,20 @@ header {
   padding-bottom: .7rem;
   color: white;
   border-bottom: 3px solid transparent;
-  transition: border-bottom .3s;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
 }
 .header_menu a:hover {
+  transition: border-bottom .3s;
   border-bottom: 3px solid #06D6A0;
 }
-
-.to_top_button {
-  font-size: 4rem;
-  position: fixed;
-  cursor: pointer;
-  right: -3rem;
-  bottom: 5rem;
+.header_menu_active {
+  border-bottom: 3px solid #06D6A0 !important;
+}
+.header_menu_active_mob {
+  background-color: #06D6A0;
+}
+.header_menu button {
+  display: none;
 }
 
 /* for testing footer */
@@ -82,7 +83,6 @@ footer a {
   color: white;
   text-decoration: none;
   padding: 0 1rem;
-  transition: color .3s;
 }
 .footer_menu, .footer_contact {
   position: absolute;
@@ -92,5 +92,71 @@ footer a {
   right: 2rem;
 }
 footer a:hover {
+  transition: color .3s;
   color: #06D6A0;
+}
+.footer_menu_active {
+  color: #06D6A0;
+}
+
+.to_top_button {
+  font-size: 4rem;
+  position: fixed;
+  cursor: pointer;
+  right: -3rem;
+  bottom: 5rem;
+}
+
+@media only screen and (max-width: 750px) {
+  header {
+    position: relative;
+  }
+  .header_title {
+    height: 7rem;
+  }
+  .header_title > a {
+    font-size: 2rem;
+    width: max-content;
+  }
+  .header_menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    font-size: 2rem;
+    border-top: none;
+    background-color: #073B4C;
+  }
+
+  .header_menu a {
+    display: block;
+    width: 100%;
+    border-bottom: 3px solid transparent;
+  }
+
+  /* use this to drag down */
+  .header_menu button {
+    display: block;
+    position: relative;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #06D6A0;
+    height: 8px;
+  }
+  .header_menu button::before {
+    content: "";
+    position: absolute;
+    width: 4rem;
+    height: 4px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+  }
+
+
+  .footer_menu {
+    display: none;
+  }
 }

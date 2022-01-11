@@ -8,19 +8,21 @@ html
     block styles_bl
     script(src='/javascripts/main_script.js')
     block script_bl
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
   body
     header
       .header_title
         a(href='/') "W3Schools How To" practice
       .header_menu
-        a(href='/menu') Menu 
-        a(href='/images') Images 
+        a(href='/menu') Menu
+        a(href='/images') Images
         a(href='/buttons') Buttons
-        a(href='/forms') Forms 
-        a(href='/filters') Filters 
-        a(href='/tables') Tables 
-        a(href='/more') More 
+        a(href='/forms') Forms
+        a(href='/filters') Filters
+        a(href='/tables') Tables
+        a(href='/more') More
         a(href='/other') Other
+        button 
 
     block content
     
@@ -37,6 +39,6 @@ html
         a(href='/more') More 
         a(href='/other') Other
       .footer_contact 
-        a(href='#') #[i.fas.fa-envelope]
-        a(href='#') #[i.fab.fa-linkedin-in]
-        a(href='#') #[i.fab.fa-twitter]
+        a(href='https://mail.google.com/' target='_blank') #[i.fas.fa-envelope]
+        a(href='https://www.linkedin.com/' target='_blank') #[i.fab.fa-linkedin-in]
+        a(href='https://twitter.com/home?lang=en' target='_blank') #[i.fab.fa-twitter]

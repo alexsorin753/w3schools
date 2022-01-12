@@ -110,19 +110,24 @@ footer a:hover {
 @media only screen and (max-width: 750px) {
   header {
     position: relative;
+    margin-bottom: 2rem;
   }
   .header_title {
     height: 7rem;
+    z-index: 10;
+    background-color: #118AB2;
   }
   .header_title > a {
     font-size: 2rem;
-    width: max-content;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 7rem;
   }
   .header_menu {
     display: block;
     position: absolute;
     width: 100%;
-    top: 0;
     font-size: 2rem;
     border-top: none;
     background-color: #073B4C;
@@ -154,8 +159,6 @@ footer a:hover {
     transform: translate(-50%, -50%);
     background-color: white;
   }
-
-
   .footer_menu {
     display: none;
   }

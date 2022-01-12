@@ -56,14 +56,14 @@ function mobile_menu() {
     const menu = document.getElementsByClassName('header_menu')[0];
     let height = parseInt(window.getComputedStyle(menu).height) - 8;
 
-    menu.style.top = `-${height}px`;
+    if(window.innerWidth < 750) menu.style.top = `-${height-70}px`;
 
     let touch_pos;
     menu.addEventListener('touchmove', function(event) {       
         event.preventDefault();
         touch_pos = event.touches[0].clientY;
 
-        if(touch_pos < height && touch_pos > 0) menu.style.top = `-${height - touch_pos}px`;
+        if(touch_pos < height && touch_pos > 70) menu.style.top = `-${height - touch_pos}px`;
     });
 
     let start_pos;
@@ -72,21 +72,21 @@ function mobile_menu() {
     });
 
     menu.addEventListener('touchend', function() {      
-        touch_pos = 10;
-        if(touch_pos > 400) menu.style.top = 0;
-        else if(touch_pos < 5) menu.style.top = `-${height}px`;
+        touch_pos = 80;
+        if(touch_pos > 400) menu.style.top = '70px';
+        else if(touch_pos < 5) menu.style.top = `-${height-70}px`;
         else {
             if(start_pos < touch_pos) {
                 menu.animate([
-                    {top: 0}
+                    {top: '70px'}
                 ], {duration: 700 - touch_pos});
-                setTimeout(() => {menu.style.top = 0}, 650 - touch_pos);
+                setTimeout(() => {menu.style.top = '70px'}, 650 - touch_pos);
             } 
             else {
                 menu.animate([
-                    {top: `-${height}px`}
+                    {top: `-${height-70}px`}
                 ], {duration: 700 - touch_pos});
-                setTimeout(() => {menu.style.top = `-${height}px`}, 650 - touch_pos);
+                setTimeout(() => {menu.style.top = `-${height-70}px`}, 650 - touch_pos);
             }             
         }
     });

@@ -64,11 +64,6 @@ header {
   display: none;
 }
 
-/* for testing footer */
-body > p {
-  height: 200rem;
-}
-
 footer {
   height: 4rem;
   width: 100%;
@@ -209,3 +204,40 @@ main {
   }
 }
 /*#endregion index*/
+
+
+/*#region menu*/
+.icon_bar {
+  width: 140rem;
+  margin: 3rem auto;
+  font-size: 1.8rem;
+}
+.icon_bar i {
+  font-size: 4rem;
+  width: 8rem;
+  line-height: 8rem;
+  text-align: center;
+  background-color: #555555;
+
+  color: white;
+  cursor: pointer;
+}
+.icon_bar i:hover {
+  background-color: #000000;
+}
+.icon_bar_active {
+  background-color: #04aa6d !important;  
+}
+.icon_bar > div {
+  display: flex;  
+}
+.icon_bar > div > div:first-child {
+  width: 30%;
+}
+.icon_bar > div > div:first-child i {
+  display: block;
+}
+.icon_bar > div > div:last-child i {
+  width: 15rem;
+}
+/*#endregion menu*/

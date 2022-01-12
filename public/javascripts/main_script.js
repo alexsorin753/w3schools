@@ -4,10 +4,15 @@ window.onload = function() {
 }
 //https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
 document.addEventListener('DOMContentLoaded', function() {
-    current_page(); mobile_menu();
-})
+    const title = document.head.getElementsByTagName('TITLE')[0].textContent   
+    current_page(title); mobile_menu();
 
+    if(title === "Menu") {
+        icon_bar();
+    }
+});
 
+//#region layout >
 function to_top() {
     const button = document.querySelector('.to_top_button');
 
@@ -31,8 +36,7 @@ function to_top() {
     });
 }
 
-function current_page() {
-    const title = document.head.getElementsByTagName('TITLE')[0].textContent;
+function current_page(title) {
     const header_button = document.querySelectorAll('.header_menu a');
     const footer_button = document.querySelectorAll('.footer_menu a');
 
@@ -91,3 +95,42 @@ function mobile_menu() {
         }
     });
 }
+//#endregion layout
+
+
+//#region menu
+function icon_bar() {
+    // // using 2 loops 
+    // const vertical = document.querySelectorAll('.icon_bar > div > div:first-child i');
+    // const horizontal = document.querySelectorAll('.icon_bar > div > div:last-child i');
+
+    // function clicked(elem, num) {
+
+    //     elem[num].addEventListener('click', function() {
+    //         elem.forEach(el => el.classList.remove('icon_bar_active'));
+    //         this.classList.add('icon_bar_active');
+    //     }); 
+    // }
+    // for(let e = 0; e < vertical.length; e++) {
+    //     clicked(vertical, e); clicked(horizontal, e);
+    // }
+
+    // without loops
+    let vertical = document.querySelector('.icon_bar > div > div:first-child');
+    let horizontal = document.querySelector('.icon_bar > div > div:last-child');
+
+    function clicked(ver_hor) {
+        ver_hor.addEventListener('click', function(ez) {
+            let active = this.getElementsByClassName('icon_bar_active')[0];
+
+            if(ez.target.tagName === 'I') {
+                if(active.classList.contains('icon_bar_active')) {
+                    active.classList.remove('icon_bar_active');
+                };       
+                ez.target.classList.add('icon_bar_active');         
+            };
+        });
+    }; clicked(vertical); clicked(horizontal);
+    
+}
+//#endregion menu

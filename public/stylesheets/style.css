@@ -1,3 +1,9 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/var() */
+:root {
+  --green: #04aa6d;
+  --dark_grey: #555555;
+}
+
 /*#region layout*/
 * {
   box-sizing: border-box;
@@ -208,7 +214,7 @@ main {
 
 /*#region menu*/
 .icon_bar {
-  width: 140rem;
+  max-width: 140rem;
   margin: 3rem auto;
   font-size: 1.8rem;
 }
@@ -217,8 +223,7 @@ main {
   width: 8rem;
   line-height: 8rem;
   text-align: center;
-  background-color: #555555;
-
+  background-color: var(--dark_grey);
   color: white;
   cursor: pointer;
 }
@@ -226,7 +231,7 @@ main {
   background-color: #000000;
 }
 .icon_bar_active {
-  background-color: #04aa6d !important;  
+  background-color: var(--green) !important;  
 }
 .icon_bar > div {
   display: flex;  
@@ -237,7 +242,19 @@ main {
 .icon_bar > div > div:first-child i {
   display: block;
 }
+.icon_bar > div > div:last-child {
+  width: 70%;
+}
 .icon_bar > div > div:last-child i {
-  width: 15rem;
+  width: 20%;
+}
+
+@media only screen and (max-width: 750px) {
+  .icon_bar > div {
+    display: block;
+  }
+  .icon_bar > div > div:last-child {
+    width: 100%;
+  }
 }
 /*#endregion menu*/

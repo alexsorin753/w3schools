@@ -16,5 +16,8 @@
     "morgan": "~1.9.1",
     "nodemon": "^2.0.15",
     "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "livereload": "^0.9.3"
   }
 }

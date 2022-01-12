@@ -10,6 +10,19 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
+// livereload - https://www.npmjs.com/package/livereload
+var livereload = require('livereload');
+var liveReloadServer = livereload.createServer();
+liveReloadServer.watch(__dirname + "/public");
+
+// refresh the page on server restart
+// https://bytearcher.com/articles/refresh-changes-browser-express-livereload-nodemon/
+liveReloadServer.server.once("connection", () => {
+  setTimeout(() => {
+    liveReloadServer.refresh("/");
+  }, 10);
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

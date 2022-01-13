@@ -1,14 +1,14 @@
 
 window.onload = function() {
     to_top(); 
-}
+};
 //https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
 document.addEventListener('DOMContentLoaded', function() {
     const title = document.head.getElementsByTagName('TITLE')[0].textContent   
     current_page(title); mobile_menu();
 
     if(title === "Menu") {
-        icon_bar(); menu_icon()
+        icon_bar(); menu_icon(); accordion();
     }
 });
 
@@ -34,7 +34,7 @@ function to_top() {
     button.addEventListener('click', function() {
         window.scroll(0, 0);
     });
-}
+};
 
 function current_page(title) {
     const header_button = document.querySelectorAll('.header_menu a');
@@ -54,7 +54,7 @@ function current_page(title) {
             }
         }
     }
-}
+};
 
 function mobile_menu() {
     const menu = document.getElementsByClassName('header_menu')[0];
@@ -94,7 +94,7 @@ function mobile_menu() {
             }             
         }
     });
-}
+};
 //#endregion layout
 
 
@@ -131,13 +131,31 @@ function icon_bar() {
             };
         });
     }; clicked(vertical); clicked(horizontal);
-}
+};
 
 function menu_icon() {
     const ico_btn = document.querySelector('.menu_icon_2');
 
     ico_btn.addEventListener('click', function() {
         ico_btn.classList.toggle('menu_icon_2_anim');
-    })
-}
+    });
+};
+
+function accordion() {
+    const section = document.querySelectorAll('.accordion > div > div');
+    const text = document.querySelectorAll('.accordion > div > p');
+
+    for(let e = 0; e < section.length; e++) {
+        text[e].style.marginTop = -text[e].clientHeight + 'px';
+
+        section[e].addEventListener('click', function() {
+			text[e].style.transition = '.5s';
+			text[e].classList.toggle('accordion_toggle');
+
+			if(text[e].classList.contains('accordion_toggle')) {
+				this.children[0].textContent = '\u2212';
+			} else this.children[0].textContent = '\u002B';
+        });
+    };
+};
 //#endregion menu

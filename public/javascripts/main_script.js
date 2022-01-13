@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     current_page(title); mobile_menu();
 
     if(title === "Menu") {
-        icon_bar();
+        icon_bar(); menu_icon()
     }
 });
 
@@ -131,6 +131,13 @@ function icon_bar() {
             };
         });
     }; clicked(vertical); clicked(horizontal);
-    
+}
+
+function menu_icon() {
+    const ico_btn = document.querySelector('.menu_icon_2');
+
+    ico_btn.addEventListener('click', function() {
+        ico_btn.classList.toggle('menu_icon_2_anim');
+    })
 }
 //#endregion menu

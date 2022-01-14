@@ -1,14 +1,20 @@
 
 window.onload = function() {
     to_top(); 
+
+    const title = document.head.getElementsByTagName('TITLE')[0].textContent;
+
+    if(title === "Menu") {
+        icon_bar(); menu_icon(); tabs();
+    }
 };
 //https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
 document.addEventListener('DOMContentLoaded', function() {
-    const title = document.head.getElementsByTagName('TITLE')[0].textContent   
+    const title = document.head.getElementsByTagName('TITLE')[0].textContent;
     current_page(title); mobile_menu();
 
     if(title === "Menu") {
-        icon_bar(); menu_icon(); accordion();
+        accordion();
     }
 });
 
@@ -36,6 +42,7 @@ function to_top() {
     });
 };
 
+// highlight the header and footer button according to the curent page
 function current_page(title) {
     const header_button = document.querySelectorAll('.header_menu a');
     const footer_button = document.querySelectorAll('.footer_menu a');
@@ -155,6 +162,34 @@ function accordion() {
 			if(text[e].classList.contains('accordion_toggle')) {
 				this.children[0].textContent = '\u2212';
 			} else this.children[0].textContent = '\u002B';
+        });
+    };
+};
+
+function tabs() {
+    const buttons = document.querySelectorAll('.tabs > div > nav button');
+    const city = document.querySelector('.tabs > div > div p:nth-child(1)');
+    const city_info = document.querySelector('.tabs > div > div p:nth-child(2)');
+
+    const obj = {
+        0 : ['London', 'London is the capital city of England'],
+        1 : ['Paris', 'Paris is the capital of France'],
+        2 : ['Tokyo', 'Tokyo is the capital of Japan']
+    };
+    
+    for(let e = 0; e < buttons.length; e++) {
+        buttons[e].addEventListener('click', function() {
+            const active_btn = document.getElementsByClassName('tabs_active')[0];
+            if(active_btn.classList.length > 0) active_btn.classList.remove('tabs_active');
+
+            this.classList.add('tabs_active')
+            city.textContent = obj[e][0];
+            city_info.textContent = obj[e][1];
+
+            city.parentNode.animate([
+                {opacity: 0},
+                {opacity: 1}
+            ], {duration: 500, fill: 'forwards'});
         });
     };
 };

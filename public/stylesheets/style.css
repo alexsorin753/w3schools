@@ -315,7 +315,7 @@ main {
   margin: 3rem auto;
 }
 .accordion > div {
-  max-width: 100rem;
+  max-width: 110rem;
   margin: auto;
   font-size: 2rem;
 }
@@ -345,6 +345,44 @@ main {
 .accordion_toggle {
   margin-top: 0 !important;
 }
+
+
+.tabs {
+  max-width: 140rem;
+  margin: 3rem auto;
+}
+.tabs > div {
+  max-width: 110rem;
+  margin: auto;
+  border: 1px solid var(--light_grey);
+}
+.tabs > div > nav {
+  border-bottom: 1px solid var(--light_grey);
+  background-color: var(--lighttest_grey);
+}
+.tabs > div > nav button {
+  border: none;
+  outline: none;
+  font-size: 1.7rem;
+  padding: 2rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: .3s;
+}
+.tabs > div > nav button:hover {
+  background-color: var(--light_grey);
+}
+.tabs > div > div {
+  padding: 2rem;
+}
+.tabs > div > div p:nth-child(1) {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+.tabs_active {
+  background-color: var(--light_grey) !important;
+}
+
 
 @media only screen and (max-width: 750px) {
   .icon_bar > div {

@@ -1,10 +1,11 @@
 //SET DEBUG=w3schools:* & npm start
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-require('dotenv').config();
+const chalk = require('chalk');
 
 // declared routes
 var indexRouter = require('./routes/index');

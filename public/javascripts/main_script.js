@@ -5,7 +5,7 @@ window.onload = function() {
     const title = document.head.getElementsByTagName('TITLE')[0].textContent;
 
     if(title === "Menu") {
-        icon_bar(); menu_icon(); tabs();
+        icon_bar(); menu_icon(); tabs(); vertical_tabs();
     }
 };
 //https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
@@ -149,8 +149,8 @@ function menu_icon() {
 };
 
 function accordion() {
-    const section = document.querySelectorAll('.accordion > div > div');
-    const text = document.querySelectorAll('.accordion > div > p');
+    const section = document.querySelectorAll('.accordion > div > div > span');
+    const text = document.querySelectorAll('.accordion > div > div p');
 
     for(let e = 0; e < section.length; e++) {
         text[e].style.marginTop = -text[e].clientHeight + 'px';
@@ -161,7 +161,11 @@ function accordion() {
 
 			if(text[e].classList.contains('accordion_toggle')) {
 				this.children[0].textContent = '\u2212';
-			} else this.children[0].textContent = '\u002B';
+                this.style.backgroundColor = '#cccccc';
+			} else {
+                this.children[0].textContent = '\u002B';
+                this.style.backgroundColor = '';
+            } 
         });
     };
 };
@@ -190,6 +194,33 @@ function tabs() {
                 {opacity: 0},
                 {opacity: 1}
             ], {duration: 500, fill: 'forwards'});
+        });
+    };
+};
+
+function vertical_tabs() {
+    const buttons = document.querySelectorAll('.vertical_tabs > div > div button');
+    const txt = document.querySelector('.vertical_tabs > div > div:nth-child(2)');
+
+    const obj = {
+        0 : ['London', 'London is the capital city of England'],
+        1 : ['Paris', 'Paris is the capital of France'],
+        2 : ['Tokyo', 'Tokyo is the capital of Japan']
+    }
+
+    for(let e = 0; e < buttons.length; e++) {
+        buttons[e].addEventListener('click', function() {
+            const el_class = document.getElementsByClassName('vertical_tabs_active')[0];
+            if(el_class) el_class.classList.remove('vertical_tabs_active');
+
+            txt.children[0].textContent = obj[e][0];
+            txt.children[1].textContent = obj[e][1];
+            this.classList.add('vertical_tabs_active');
+
+            txt.animate([
+                {opacity: 0},
+                {opacity: 1}
+            ], {duration: 300});
         });
     };
 };

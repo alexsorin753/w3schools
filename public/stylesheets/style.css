@@ -320,26 +320,26 @@ main {
   font-size: 2rem;
 }
 .accordion > div > div {
-  background-color: var(--lighttest_grey);  
-  padding: 2rem;
-  cursor: pointer;
-  z-index: 2;
-  position: relative;
-}
-.accordion > div > div:hover {
-  background-color: var(--light_grey);
+  overflow: hidden;
 }
 .accordion > div > div > span {
-  float: right;
-  font-size: 2.2rem;
-  font-weight: bolder;
-  color: var(--grey);
+  background-color: var(--lighttest_grey);
+  display: block;
+  padding: 2rem;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 5;
+  position: relative;
 }
-.accordion > div > p {
+.accordion > div > div span:hover {
+  background-color: var(--light_grey);
+}
+.accordion > div > div > span span {
+  float: right;
+}
+.accordion > div > div p {
   padding: 2rem;
   margin: 0;
-  font-size: 1.9rem;
-  /* margin-top: -4rem; */
   background-color: white;
 }
 .accordion_toggle {
@@ -382,6 +382,50 @@ main {
 .tabs_active {
   background-color: var(--light_grey) !important;
 }
+
+
+.vertical_tabs {
+  max-width: 140rem;
+  margin: 3rem auto;
+}
+.vertical_tabs > div {
+  border: 1px solid var(--light_grey);
+  max-width: 110rem;
+  height: 25rem;
+  margin: auto;
+  display: flex;
+}
+.vertical_tabs > div > div:nth-child(1) {
+  width: 30%;
+  background-color: var(--lighttest_grey);
+  border-right: 1px solid var(--light_grey);  
+}
+.vertical_tabs > div > div button {
+  display: block;
+  width: 100%;
+  font-size: 1.8rem;
+  padding: 2rem;
+  text-align: start;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: .3s;
+}
+.vertical_tabs > div > div button:hover {
+  background-color: var(--light_grey);
+}
+.vertical_tabs > div > div:nth-child(2) {
+  width: 70%;
+  padding: 0 2rem;
+
+} 
+.vertical_tabs > div > div:nth-child(2) p:nth-child(1) {
+  font-size: 3rem;
+} 
+.vertical_tabs_active {
+  background-color: var(--light_grey);
+}
+
 
 
 @media only screen and (max-width: 750px) {

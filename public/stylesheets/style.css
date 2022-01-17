@@ -427,6 +427,45 @@ main {
 }
 
 
+.tab_headers {
+  max-width: 140rem;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.tab_headers > div {
+  max-width: 110rem;
+  margin: auto;
+}
+.tab_headers > div > div:nth-child(1) {
+  text-align: center;
+  padding: 5rem;
+}
+.tab_headers > div > div:nth-child(1) p {
+  margin: 0;
+  color: white;
+}
+.tab_headers > div > div:nth-child(1) p:nth-child(1) {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+.tab_headers > div > div:nth-child(2) button {
+  width: 25%;
+  font-size: 2rem;
+  padding: 1.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.tab_headers > div > div:nth-child(2) button:hover {
+  background-color: var(--light_grey);
+}
+.tab_headers_active {
+  color: white !important;
+}
+.tab_headers_active_bg {
+  background-color: #f44336 !important;  
+}
+
 
 @media only screen and (max-width: 750px) {
   .icon_bar > div {

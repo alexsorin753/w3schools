@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     current_page(title); mobile_menu();
 
     if(title === "Menu") {
-        accordion();
+        accordion(); tab_headers();
     }
 });
 
@@ -206,7 +206,7 @@ function vertical_tabs() {
         0 : ['London', 'London is the capital city of England'],
         1 : ['Paris', 'Paris is the capital of France'],
         2 : ['Tokyo', 'Tokyo is the capital of Japan']
-    }
+    };
 
     for(let e = 0; e < buttons.length; e++) {
         buttons[e].addEventListener('click', function() {
@@ -221,6 +221,38 @@ function vertical_tabs() {
                 {opacity: 0},
                 {opacity: 1}
             ], {duration: 300});
+        });
+    };
+};
+
+function tab_headers() {
+    const buttons = document.querySelectorAll('.tab_headers > div > div:nth-child(2) button');
+    const txt = document.querySelector('.tab_headers > div > div:nth-child(1)');
+
+    const obj = {
+        0 : ['#f44336', 'London', 'London is the capital city of England'],
+        1 : ['#04aa6d', 'Paris', 'Paris is the capital of France'],
+        2 : ['#2196f3', 'Tokyo', 'Tokyo is the capital of Japan'],
+        3 : ['#ff5722', 'Oslo', 'Oslo is the capital of Norway']
+    };
+
+    txt.style.backgroundColor = obj[0][0];
+
+    for(let e = 0; e < buttons.length; e++) {
+
+        buttons[e].addEventListener('click', function() {
+            const active = document.getElementsByClassName('tab_headers_active')[0];
+            if(active) active.className = '';
+
+            txt.children[0].textContent = obj[e][1];
+            txt.children[1].textContent = obj[e][2];
+
+            txt.style.backgroundColor = obj[e][0];
+
+            active.style.backgroundColor = '';
+            this.style.backgroundColor = obj[e][0];
+            
+            this.classList.add('tab_headers_active');
         });
     };
 };

@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     current_page(title); mobile_menu();
 
     if(title === "Menu") {
-        accordion(); tab_headers();
+        accordion(); tab_headers(); full_tage_tabs();
     }
 });
 
@@ -253,6 +253,34 @@ function tab_headers() {
             this.style.backgroundColor = obj[e][0];
             
             this.classList.add('tab_headers_active');
+        });
+    };
+};
+
+function full_tage_tabs() {
+    const cont = document.querySelector('.full_page_tabs > div');
+    const txt = document.querySelector('.full_page_tabs > div > div');
+    const buttons = document.querySelectorAll('.full_page_tabs > div > nav button');
+
+    const obj = {
+        0 : ['#f44336', 'Home', 'Home is where the heart is..'],
+        1 : ['#04aa6d', 'News', 'Some news this fine day!'],
+        2 : ['#2196f3', 'Contact', 'Get in touch, or swing by for a cup of coffee.'],
+        3 : ['#ff5722', 'About', 'Who we are and what we do.']
+    };
+
+    cont.style.backgroundColor = obj[0][0];
+
+    for(let e = 0; e < buttons.length; e++) {
+        buttons[e].addEventListener('click', function() {
+            const active = document.getElementsByClassName('full_page_tabs_active')[0];
+            if(active) active.classList.remove('full_page_tabs_active');
+
+            txt.children[0].textContent = obj[e][1];
+            txt.children[1].textContent = obj[e][2];
+
+            cont.style.backgroundColor = obj[e][0];
+            this.classList.add('full_page_tabs_active');
         });
     };
 };

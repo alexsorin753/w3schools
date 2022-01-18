@@ -5,10 +5,11 @@ window.onload = function() {
     const title = document.head.getElementsByTagName('TITLE')[0].textContent;
 
     if(title === "Menu") {
-        icon_bar(); menu_icon(); tabs(); vertical_tabs();
+        icon_bar(); menu_icon(); tabs(); vertical_tabs(); hover_tabs();
     }
 };
-//https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
+// use if you make DOM/style changes on load
 document.addEventListener('DOMContentLoaded', function() {
     const title = document.head.getElementsByTagName('TITLE')[0].textContent;
     current_page(title); mobile_menu();
@@ -281,6 +282,29 @@ function full_tage_tabs() {
 
             cont.style.backgroundColor = obj[e][0];
             this.classList.add('full_page_tabs_active');
+        });
+    };
+};
+
+function hover_tabs() {
+    const buttons = document.querySelectorAll('.hover_tabs > div > div:nth-child(1) button');
+    const txt = document.querySelector('.hover_tabs > div > div:nth-child(2)');
+
+    const obj = {
+        0 : ['London', 'London is the capital city of England'],
+        1 : ['Paris', 'Paris is the capital of France'],
+        2 : ['Tokyo', 'Tokyo is the capital of Japan']
+    };
+
+    for(let e = 0; e < buttons.length; e++) {
+        buttons[e].addEventListener('mouseenter', function() {
+            const active = document.getElementsByClassName('hover_tabs_active')[0];
+            if(active) active.classList.remove('hover_tabs_active');
+
+            txt.children[0].textContent = obj[e][0];
+            txt.children[1].textContent = obj[e][1];
+
+            this.classList.add('hover_tabs_active');
         });
     };
 };

@@ -503,6 +503,43 @@ main {
 }
 
 
+.hover_tabs {
+  max-width: 140rem;
+  margin: 3rem auto;
+}
+.hover_tabs > div {
+  max-width: 110rem;
+  margin: auto;
+  border: 1px solid var(--light_grey);
+  display: flex;
+  height: 25rem;
+}
+.hover_tabs > div > div:nth-child(1) {
+  width: 30%;
+  background-color: var(--lighttest_grey);
+  border-right: 1px solid var(--light_grey);
+}
+.hover_tabs > div > div:nth-child(1) button {
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  padding: 2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.hover_tabs_active {
+  background-color: var(--light_grey);
+}
+.hover_tabs > div > div:nth-child(2) {
+  width: 70%;
+  padding: 0 4rem;
+}
+.hover_tabs > div > div:nth-child(2) p:first-child {
+  font-size: 3.5rem;
+}
+
+
 @media only screen and (max-width: 750px) {
   .icon_bar > div {
     display: block;

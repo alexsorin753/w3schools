@@ -5,6 +5,7 @@
   --light_grey: #cccccc;
   --grey: #777777;
   --dark_grey: #555555;
+  --black-light: #333333;
 }
 
 /*#region layout*/
@@ -537,6 +538,29 @@ main {
 }
 .hover_tabs > div > div:nth-child(2) p:first-child {
   font-size: 3.5rem;
+}
+
+
+.top_navigation {
+  max-width: 140rem;
+  margin: 3rem auto;
+}
+.top_navigation > nav {
+  background-color: var(--black-light);
+}
+.top_navigation > nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 1.5rem;
+}
+.top_navigation > nav a:hover {
+  background-color: var(--light_grey);
+  color: #000000;
+}
+.top_navigation_active {
+  background-color: var(--green) !important;
+  color: white !important;
 }
 
 

@@ -571,5 +571,11 @@ main {
   .icon_bar > div > div:last-child {
     width: 100%;
   }
+
+
+  .top_navigation > nav a {
+    width: 25%;
+    text-align: center;
+  }
 }
 /*#endregion menu*/

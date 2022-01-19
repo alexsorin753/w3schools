@@ -564,6 +564,69 @@ main {
 }
 
 
+.reponsive_navigation {
+  max-width: 140rem;
+  margin: 3rem auto;
+}
+.reponsive_navigation > nav {
+  position: relative;
+  background-color: var(--black-light);
+  height: 5rem;
+}
+.reponsive_navigation > nav a {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 0 1.5rem;
+  line-height: 5rem;
+}
+.reponsive_navigation > nav button {
+  height: 5rem;
+  width: 5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  cursor: pointer;
+  display: none;
+}
+.reponsive_navigation > nav button::before {
+  content: "";
+  display: block;
+  height: 1.5rem;
+  width: 2.4rem;
+  border: 3px solid white;
+  border-left: none;
+  border-right: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.reponsive_navigation > nav button::after {
+  content: "";
+  display: block;
+  width: 2.4rem;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.reponsive_navigation > nav a:hover {
+  background-color: var(--light_grey);
+  color: #000000;
+}
+.reponsive_navigation_active {
+  background-color: var(--green) !important;
+  color: white !important;
+}
+
+
 @media only screen and (max-width: 750px) {
   .icon_bar > div {
     display: block;
@@ -576,6 +639,17 @@ main {
   .top_navigation > nav a {
     width: 25%;
     text-align: center;
+  }
+
+  
+  .reponsive_navigation > nav button {
+    display: block;
+  }
+  .reponsive_navigation > nav {
+    height: fit-content;
+  }
+  .reponsive_navigation > nav a:nth-of-type(n+2) {
+    display: none;
   }
 }
 /*#endregion menu*/

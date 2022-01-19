@@ -5,7 +5,7 @@ window.onload = function() {
    const title = document.head.getElementsByTagName('TITLE')[0].textContent;
 
    if(title === "Menu") {
-      icon_bar(); menu_icon(); tabs(); vertical_tabs(); hover_tabs(); top_navigation();
+      icon_bar(); menu_icon(); tabs(); vertical_tabs(); hover_tabs(); top_navigation(); responsive_navigation();
    }
 };
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
@@ -339,6 +339,37 @@ function top_navigation() {
 			if(active) active.classList.remove('top_navigation_active');
 
 			elem.classList.add('top_navigation_active');			
+		});
+	};
+};
+
+function responsive_navigation() {
+	const button = document.querySelector('.reponsive_navigation > nav button');
+	const links = document.querySelectorAll('.reponsive_navigation > nav a');
+
+
+	let open = false;
+	let open_function = (disp_first, disp_other) => {
+		links[0].style.display = disp_first;
+		for(let e = 1; e < links.length; e++) links[e].style.display = disp_other;
+	};
+	button.addEventListener('click', function() {
+		if(open) {
+			open_function('inline-block', 'none');
+			open = false;
+		} else {
+			open_function('block', 'block');
+			open = true;
+		}
+	});
+
+	for(let elem of links) {
+		elem.addEventListener('click', function(e) {
+			e.preventDefault();
+			const active = document.getElementsByClassName('reponsive_navigation_active')[0];
+			if(active) active.classList.remove('reponsive_navigation_active');
+
+			elem.classList.add('reponsive_navigation_active');
 		});
 	};
 };

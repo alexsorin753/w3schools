@@ -5,7 +5,7 @@ window.onload = function() {
    const title = document.head.getElementsByTagName('TITLE')[0].textContent;
 
    if(title === "Menu") {
-      icon_bar(); menu_icon(); tabs(); vertical_tabs(); hover_tabs(); top_navigation(); responsive_navigation();
+      icon_bar(); menu_icon(); tabs(); vertical_tabs(); hover_tabs(); top_navigation(); responsive_navigation(); navbar_with_icons();
    }
 };
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
@@ -370,6 +370,30 @@ function responsive_navigation() {
 			if(active) active.classList.remove('reponsive_navigation_active');
 
 			elem.classList.add('reponsive_navigation_active');
+		});
+	};
+};
+
+function navbar_with_icons() {
+	const icons = document.querySelectorAll('.navbar_with_icons > nav a');
+
+	// for(let e = 0; e < icons.length; e++) {
+	// 	icons[e].addEventListener('click', function(ez) {
+	// 		ez.preventDefault();		
+
+	// 		const active = document.getElementsByClassName('navbar_with_icons_active')[0];
+	// 		if(active) active.classList.remove('navbar_with_icons_active');
+	// 		this.classList.add('navbar_with_icons_active');
+	// 	});
+	// };
+
+	for(let icon of icons) {
+		icon.addEventListener('click', function(ez) {
+			ez.preventDefault();
+
+			const active = document.getElementsByClassName('navbar_with_icons_active')[0];
+			if(active) active.classList.remove('navbar_with_icons_active');
+			icon.classList.add('navbar_with_icons_active');
 		});
 	};
 };

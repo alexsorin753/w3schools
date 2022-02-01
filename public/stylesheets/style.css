@@ -627,6 +627,30 @@ main {
 }
 
 
+.navbar_with_icons {
+  max-width: 140rem;
+  margin: 3rem auto;
+}
+.navbar_with_icons > nav {
+  background-color: var(--black-light);
+  display: flex;
+}
+.navbar_with_icons > nav a {
+  text-decoration: none;
+  color: white;
+  padding: 1.5rem;
+}
+.navbar_with_icons > nav a i {
+  margin-right: .5rem;
+}
+.navbar_with_icons > nav a:hover {
+  background-color: #000000;
+}
+.navbar_with_icons_active {
+  background-color: var(--green) !important;
+}
+
+
 @media only screen and (max-width: 750px) {
   .icon_bar > div {
     display: block;
@@ -650,6 +674,11 @@ main {
   }
   .reponsive_navigation > nav a:nth-of-type(n+2) {
     display: none;
+  }
+
+
+  .navbar_with_icons > nav {
+    flex-direction: column;
   }
 }
 /*#endregion menu*/

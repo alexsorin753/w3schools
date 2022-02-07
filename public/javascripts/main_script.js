@@ -5,7 +5,7 @@ window.onload = function() {
    const title = document.head.getElementsByTagName('TITLE')[0].textContent;
 
    if(title === "Menu") {
-      icon_bar(); menu_icon(); tabs(); vertical_tabs(); hover_tabs(); top_navigation(); responsive_navigation(); navbar_with_icons();
+      icon_bar(); menu_icon(); tabs(); vertical_tabs(); hover_tabs(); top_navigation(); responsive_navigation(); navbar_with_icons(); search_bar();
    }
 };
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
@@ -502,6 +502,20 @@ function search_menu() {
 			if(list_el.textContent.substring(0, type_leng).toLowerCase() == search.value.substring(0, type_leng).toLowerCase()) {
 				list_el.style.display = 'list-item';
 			};
+		});
+	};
+};
+
+function search_bar() {
+	const links = document.querySelectorAll('.search_bar > nav a');
+
+	for(let link of links) {
+		link.addEventListener('click', function(e) {
+			e.preventDefault();
+			const active = document.getElementsByClassName('search_bar_active')[0];
+
+			if(active) active.classList.remove('search_bar_active');
+			this.classList.add('search_bar_active');
 		});
 	};
 };

@@ -2,6 +2,7 @@ extends external_layout
 
 block content
   body.side_navigation 
+    .side_nav_blur
     nav 
       div Side Navigation 
       div 
@@ -10,3 +11,10 @@ block content
         button Sidenav Push(off-canvas)
         button Sidenav Push(w/opacity)
         button Sidenav full-width
+    .side_nav_overlay
+      button &#10006;
+      a(href="#") About
+      a(href="#") Services
+      a(href="#") Clients
+      a(href="#") Contact
+    .side_nav_back #[a(href="/menu") Back to main site]

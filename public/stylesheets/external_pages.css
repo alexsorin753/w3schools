@@ -156,3 +156,71 @@ html, body {
 .side_nav_back > a:hover {
   color: var(--green);
 }
+
+
+.responsive_sidebar {
+  font-size: 2rem;
+  padding-left: 30rem;
+  position: relative;
+}
+.responsive_sidebar > nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--lighttest_grey);
+  height: 100%;
+  width: 27rem;
+}
+.responsive_sidebar > nav a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 2rem;
+}
+.responsive_sidebar > nav a:hover {
+  background-color: var(--dark_grey);
+  color: white;
+}
+.responsive_sidebar_active {
+  background-color: var(--green) !important;
+  color: white !important;
+}
+.responsive_sidebar > div {
+  margin-top: 5rem;
+  height: 200vh;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .responsive_sidebar {
+    padding-left: 2rem;
+  }
+  .responsive_sidebar > nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    height: fit-content;
+  }
+  .responsive_sidebar > nav a {
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .responsive_sidebar > div {
+    margin-top: 7rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .responsive_sidebar {
+    padding-left: 0;
+  }
+  .responsive_sidebar > nav {
+    position: static;;
+    height: fit-content;
+    width: 100%;
+    display: block;
+  }
+  .responsive_sidebar > div {
+    margin: 2rem;
+  }
+
+}

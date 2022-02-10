@@ -46,6 +46,8 @@ router.get('/other', function(req, res, next) {
   res.render('other', { title: 'Other' });
 });
 
+// External pages
+
 // GET fixed-sidebar-full page.
 router.get('/fixed-sidebar-full', function(req, res, next) {
   res.render('external/fixed_sidebar_full', { title: 'Full Fixed Sidebar'});
@@ -59,5 +61,10 @@ router.get('/fixed-sidebar-auto', function(req, res, next) {
 // GET side-navigation page.
 router.get('/side-navigation', function(req, res, next) {
   res.render('external/side_navigation', { title: 'Side Navigation'});
+});
+
+// GET responsive_sidebar.
+router.get('/responsive-sidebar', function(req, res, next) {
+  res.render('external/responsive_sidebar', { title: 'Responsive Sidebar'});
 });
 module.exports = router;

@@ -28,8 +28,8 @@ function side_navigation() {
          {opacity: opacity_st},
          {opacity: opacity_en}
       ], {duration: time, fill: 'forwards', easing: "ease"});
-
    };
+   
    let active;
    for(let e = 0; e < buttons.length; e++) {
       buttons[e].addEventListener('click', function() {

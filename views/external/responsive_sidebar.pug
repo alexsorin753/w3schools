@@ -1,0 +1,22 @@
+html 
+  head 
+    title= title
+    link(rel='stylesheet', href='/stylesheets/external_pages.css')
+    link(rel='stylesheet', href='/fontawesome-free/css/all.css')
+    script(src='/javascripts/external_pages.js')
+  body.responsive_sidebar 
+    nav 
+      a.responsive_sidebar_active(href='/') Home
+      a(href='/menu') Menu
+      a(href='/images') Images
+      a(href='/buttons') Buttons
+      a(href='/forms') Forms
+      a(href='/filters') Filters
+      a(href='/tables') Tables
+      a(href='/more') More
+      a(href='/other') Other
+    div 
+      h2 Responsive Sidebar Example 
+      p This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or less.
+      p We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.
+      h3 Resize the browser window to see the effect.

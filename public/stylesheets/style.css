@@ -768,6 +768,19 @@ main {
 }
 
 
+.responsive_sidebar {
+  max-width: 140rem;
+  margin: 3rem auto;
+  display: flex;
+}
+.responsive_sidebar > iframe {
+  width: 140rem;
+  height: 40rem;
+  overflow: scroll;
+  border: 4px solid var(--light_grey);  
+}
+
+
 @media only screen and (max-width: 750px) {
   .icon_bar > div {
     display: block;

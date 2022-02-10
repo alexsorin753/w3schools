@@ -845,3 +845,27 @@ main {
   }
 }
 /*#endregion menu*/
+
+
+/*#region filters*/
+.sort_list {
+  max-width: 140rem;
+  margin: auto;
+}
+.sort_list > ul {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.sort_list > ul > li {
+  border-bottom: 1px solid black;
+}
+.sort_list > button {
+  cursor: pointer;
+}
+.sort_list > span {
+  margin-left: 2rem;
+  color: var(--green);
+}
+/*#endregion filters*/

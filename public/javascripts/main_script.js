@@ -7,6 +7,9 @@ window.onload = function() {
    if(title === "Menu") {
       icon_bar(); menu_icon(); tabs(); vertical_tabs(); hover_tabs(); top_navigation(); responsive_navigation(); navbar_with_icons(); search_bar();
    }
+	if(title === "Filters") {
+		
+	}
 };
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
 // use if you make DOM/style changes on load
@@ -17,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
    if(title === "Menu") {
       accordion(); tab_headers(); full_tage_tabs(); search_menu();
    }
+	if(title === "Filters") {
+		filter_list();
+	}
 });
 
 //#region layout >
@@ -520,3 +526,67 @@ function search_bar() {
 	};
 };
 //#endregion menu
+
+
+//#region filters
+function filter_list() {
+	const button = document.querySelector('.sort_list > button')
+	const status = document.querySelector('.sort_list > span')
+	const countries = document.querySelector('.sort_list > ul').getElementsByTagName('LI');
+
+	(function int_order() {
+		for(let e = 0; e < countries.length; e++) countries[e].dataset.int = e;
+	})();
+
+	function random() {
+		for(let country of countries) {
+			let rand = Math.round( Math.random() * countries.length );
+			country.dataset.ran = rand;
+		}
+	}
+
+	function sort(direction) {
+		let x, y, shouldSwitch;
+		let switching = true;
+
+		while(switching) {
+			switching = false;
+			for(let e = 0; e < countries.length - 1; e++) {
+				shouldSwitch = false;
+				let sort_direction;
+				x = countries[e];
+				y = countries[e + 1];
+
+				if(direction === "Initial") {
+					sort_direction = Number(x.dataset.int) > Number(y.dataset.int);
+				} 
+				if(direction === "Ascending") sort_direction = x.textContent > y.textContent;
+				if(direction === "Descending") sort_direction = x.textContent < y.textContent;
+				if(direction === "Random") {
+					sort_direction = Number(x.dataset.ran) > Number(y.dataset.ran);
+				} 
+
+				if(sort_direction) {
+					shouldSwitch = true; break;
+				}
+			}
+
+			if(shouldSwitch) {
+				x.parentNode.insertBefore(y, x);
+				switching = true;
+			}
+		}
+	}
+
+	const status_arr = ["Initial", "Ascending", "Descending", "Random"]
+	let st_num = 0; // status number used for status_arr
+	button.addEventListener('click', function() {
+		if(st_num < 3) st_num++;
+		else st_num = 0;
+		status.textContent = status_arr[st_num];
+
+		if(st_num === 3) random();
+		sort(status_arr[st_num]);
+	});
+}
+//#endregion filters

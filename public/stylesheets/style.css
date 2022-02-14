@@ -772,12 +772,30 @@ main {
   max-width: 140rem;
   margin: 3rem auto;
   display: flex;
+  flex-wrap: wrap;
+}
+.responsive_sidebar > h2 {
+  width: 100%;
 }
 .responsive_sidebar > iframe {
   width: 140rem;
   height: 40rem;
   overflow: scroll;
   border: 4px solid var(--light_grey);  
+}
+
+
+.fullSC_nav {
+  max-width: 140rem;
+  margin: 3rem auto;
+}
+.fullSC_nav > a {
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: var(--blue);
+}
+.fullSC_nav > a:hover {
+  color: black;
 }
 
 

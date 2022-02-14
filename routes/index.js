@@ -67,4 +67,9 @@ router.get('/side-navigation', function(req, res, next) {
 router.get('/responsive-sidebar', function(req, res, next) {
   res.render('external/responsive_sidebar', { title: 'Responsive Sidebar'});
 });
+
+// GET fullscreen_nav.
+router.get('/fullscreen-nav', function(req, res, next) {
+  res.render('external/fullscreen_nav', { title: 'Fullscreen Navigation'});
+});
 module.exports = router;

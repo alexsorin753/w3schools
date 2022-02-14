@@ -36,7 +36,6 @@ app.use(cookieParser());
 
 // static files
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'node_modules/@fortawesome')));
 
 // use routes
 app.use('/', indexRouter);

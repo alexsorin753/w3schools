@@ -195,6 +195,15 @@ html, body {
   position: relative;
   height: calc(100vh - 229px);
 }
+.fullscreen_nav > button {
+  position: absolute;
+  left: 50%;
+  top: 20rem;
+  transform: translateX(-50%);
+  font-size: 2.2rem;
+  width: 20rem;
+  cursor: pointer;
+}
 .fullscreen_nav > div {
   position: absolute;
   top: 50%;
@@ -212,28 +221,39 @@ html, body {
 .fullscreen_nav_slide {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.9);
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: -100vw;
   width: 100%;
-  height: 100%;
-}
-.fullscreen_nav_slide > div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 100%; */
+  overflow: hidden;
 }
 .fullscreen_nav_slide > button {
-  float: right;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
   margin: 2rem;
-  font-size: 4rem;
+  font-size: 5rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--grey);
+  cursor: pointer;
 }
-.fullscreen_nav_slide > div a {
+.fullscreen_nav_slide > a:nth-of-type(1) {
+  margin-top: 30rem;
+}
+.fullscreen_nav_slide > a {
   display: block;
   font-size: 4rem;
+  padding: 1rem;
   text-decoration: none;
   text-align: center;
   color: var(--grey);
+  text-align: center;
+}
+.fullscreen_nav_slide > a:hover,
+.fullscreen_nav_slide > button:hover {
+  color: white;
 }
 
 

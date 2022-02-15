@@ -2,9 +2,10 @@ extends  ../layout
 block styles_bl
   link(rel='stylesheet', href='/stylesheets/external_pages.css')
 block script_bl 
-  script(href="/javascripts/external_pages.js")
+  script(src="/javascripts/external_pages.js")
 block content 
   main.fullscreen_nav
+    button Slide left-right
     div
       button Slide Right 
       button Slide Down 
@@ -12,8 +13,7 @@ block content
   .fullscreen_nav_slide 
     //- button &#10006;
     button #[i.fa-solid.fa-xmark]
-    div
-      a(href='#') About 
-      a(href='#') Services 
-      a(href='#') Client 
-      a(href='#') Contact
+    a(href='#') About 
+    a(href='#') Services 
+    a(href='#') Client 
+    a(href='#') Contact

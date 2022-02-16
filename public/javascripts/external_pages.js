@@ -148,8 +148,10 @@ function fullscreen_navigation() {
             }, 500)
          };
          if(trackBTN===2) {
-            slide_menu.animate({width: 0}, {duration: 0, fill: 'forwards'});
-            slide_menu.animate({height: 0}, {duration: 0, fill: 'forwards'});
+            slide_menu.animate([
+               {width: 0},
+               {height: 0}
+            ], {duration: 0, fill: 'forwards'});
          }
       }
    });

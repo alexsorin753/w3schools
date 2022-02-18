@@ -879,6 +879,28 @@ main {
 }
 
 
+.horizontal_scroll_menu {
+  max-width: 140rem;
+  margin: auto;
+}
+.horizontal_scroll_menu > nav {
+  background-color: var(--black_light);
+  max-width: 80rem;
+  display: flex;
+  overflow-x: auto;
+  margin: auto;
+}
+.horizontal_scroll_menu > nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 2rem;
+}
+.horizontal_scroll_menu > nav a:hover {
+  background-color: var(--grey);
+}
+
+
 @media only screen and (max-width: 750px) {
   .icon_bar > div {
     display: block;

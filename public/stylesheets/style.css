@@ -925,6 +925,17 @@ main {
 }
 
 
+.bottom_navigation {
+  max-width: 140rem;
+  margin: auto;
+}
+.bottom_navigation > iframe {
+  width: 100%;
+  height: 40rem;
+  border: 3px solid var(--lighttest_grey);
+}
+
+
 @media only screen and (max-width: 750px) {
   .icon_bar > div {
     display: block;

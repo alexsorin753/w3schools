@@ -255,6 +255,41 @@ html, body {
 .fullscreen_nav_slide > button:hover {
   color: white;
 }
+.bottom_nav_bar {
+  font-size: 62.5%;
+  background-color: var(--light_grey);
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 5rem;
+}
+.bottom_nav_bar > body {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.bottom_nav_bar > body > nav {
+  background-color: var(--black-light);
+  height: 5rem;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.bottom_nav_bar > body > nav a {
+  color: white;
+  text-decoration: none;
+  line-height: 5rem;
+  padding: 0 2rem;
+}
+.bottom_nav_bar > body > nav > a:hover {
+  background-color: var(--lighttest_grey);
+  color: black;
+}
+.bottom_nav_bar_active {
+  background-color: var(--green);
+}
 
 
 @media only screen and (max-width: 750px) {

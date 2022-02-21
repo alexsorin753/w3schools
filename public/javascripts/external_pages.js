@@ -1,7 +1,7 @@
 window.onload = function() {
    let title = document.head.getElementsByTagName('TITLE')[0].textContent;
    if(title === 'Side Navigation') side_navigation();
-   
+   if(title === 'Bottom Navigation Bar') bottom_navigation();
 };
 
 // use it if you make changes to the DOM on load
@@ -222,4 +222,19 @@ function fullscreen_navigation() {
    //       slide_menu.animate({height: 0}, {duration: 0, fill: 'forwards'});
    //    }
    // });
+
+
+};  
+
+function bottom_navigation() {
+   const links = document.querySelectorAll('.bottom_nav_bar > body > nav a');
+
+   for(let link of links) {
+      link.addEventListener('click', function() {
+         const active = document.getElementsByClassName('bottom_nav_bar_active')[0];
+
+         if(active) active.classList.remove('bottom_nav_bar_active');
+         link.classList.add('bottom_nav_bar_active');
+      });
+   };
 };

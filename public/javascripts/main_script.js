@@ -1,11 +1,10 @@
-
 window.onload = function() {
    to_top(); 
 
    const title = document.head.getElementsByTagName('TITLE')[0].textContent;
 
    if(title === "Menu") {
-      icon_bar(); menu_icon(); tabs(); vertical_tabs(); hover_tabs(); top_navigation(); responsive_navigation(); navbar_with_icons(); search_bar();
+      icon_bar(); menu_icon(); tabs(); vertical_tabs(); hover_tabs(); top_navigation(); responsive_navigation(); navbar_with_icons(); search_bar(); vertical_menu();
    }
 	if(title === "Filters") {
 		
@@ -522,6 +521,19 @@ function search_bar() {
 
 			if(active) active.classList.remove('search_bar_active');
 			this.classList.add('search_bar_active');
+		});
+	};
+};
+
+function vertical_menu() {
+	const links = document.querySelectorAll('.vertical_menu > nav a');
+
+	for(let link of links) {
+		link.addEventListener('click', function() {
+			const active = document.getElementsByClassName('vertical_menu_active')[0];
+
+			if(active) active.classList.remove('vertical_menu_active');
+			link.classList.add('vertical_menu_active');
 		});
 	};
 };

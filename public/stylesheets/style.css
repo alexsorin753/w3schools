@@ -901,6 +901,30 @@ main {
 }
 
 
+.vertical_menu {
+  max-width: 140rem;
+  margin: auto;
+}
+.vertical_menu > nav {
+  max-width: 40rem;
+}
+.vertical_menu > nav a {
+  display: block;
+  background-color: var(--lighttest_grey);
+  text-decoration: none;
+  font-size: 2rem;
+  color: black;
+  padding: 1rem;
+}
+.vertical_menu_active {
+  background-color: var(--green) !important;
+  color: white !important;
+}
+.vertical_menu > nav a:hover {
+  filter: brightness(.8);
+}
+
+
 @media only screen and (max-width: 750px) {
   .icon_bar > div {
     display: block;

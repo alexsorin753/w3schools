@@ -287,6 +287,24 @@ html, body {
   background-color: var(--lighttest_grey);
   color: black;
 }
+.bottom_nav_bar > body > nav button {
+  position: absolute;
+  height: 5rem;
+  width: 5rem;
+  right: 0;
+  bottom: 0;
+  font-size: 2rem;
+  color: white;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+.bottom_nav_bar > body > nav button:hover {
+  background-color: var(--lighttest_grey);
+  color: black;
+}
 .bottom_nav_bar_active {
   background-color: var(--green);
 }
@@ -309,7 +327,24 @@ html, body {
   .responsive_sidebar > div {
     margin-top: 7rem;
   }
-}
+
+
+  .bottom_nav_bar > body > nav {
+    flex-direction: column;
+    /* height: 20rem; */
+  }
+  .bottom_nav_bar > body > nav a {
+    text-align: start;
+    width: fit-content; /**/
+  }
+  .bottom_nav_bar > body > nav button {
+    display: block;
+  }
+
+  .bottom_nav_bar_hide {
+    display: none;
+  }
+} 
 @media only screen and (max-width: 500px) {
   .responsive_sidebar {
     padding-left: 0;

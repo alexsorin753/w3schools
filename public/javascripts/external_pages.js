@@ -228,6 +228,7 @@ function fullscreen_navigation() {
 
 function bottom_navigation() {
    const links = document.querySelectorAll('.bottom_nav_bar > body > nav a');
+   const btn = document.querySelector('.bottom_nav_bar > body > nav button');
 
    for(let link of links) {
       link.addEventListener('click', function() {
@@ -237,4 +238,25 @@ function bottom_navigation() {
          link.classList.add('bottom_nav_bar_active');
       });
    };
+
+   function menu_toggle(menu_height, links_width, links_dis) {
+      btn.parentNode.style.height = menu_height;
+      for(let link of links) {
+         link.style.width = links_width;
+         if(link.classList.contains("bottom_nav_bar_hide")) link.style.display = links_dis;
+      };
+   };
+
+   let menu_open = false;
+   btn.addEventListener('click', function() {
+      if(menu_open) {
+         menu_toggle("", "", ""); menu_open = false;
+      } else {
+         menu_toggle("20rem", "100%", "block"); menu_open = true;
+      };
+   });
+
+   window.addEventListener('resize', function() {
+      if(this.innerWidth > 750) menu_toggle("", "", ""); menu_open = false;
+   });
 };

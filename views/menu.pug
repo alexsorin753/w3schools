@@ -2,9 +2,6 @@ extends layout
 
 block content
 	main 
-		.fixed_menu 
-			h2 Fixed Menu #[a(href="/fixed-menu" target="blank") #[i.fas.fa-external-link-alt]]
-			iframe(src="/fixed-menu") 
 		.icon_bar
 			h2 Icon Bar
 			div
@@ -239,3 +236,6 @@ block content
 		.equal_width_menu_links 
 			h2 Equal Width Menu Links 
 			nav #[a.equal_width_menu_links_active(href="#") Home] #[a(href="#") Search] #[a(href="#") Contact] #[a(href="#") About]
+		.fixed_menu 
+			h2 Fixed Menu #[a(href="/fixed-menu" target="blank") #[i.fas.fa-external-link-alt]]
+			iframe(src="/fixed-menu") 

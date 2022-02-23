@@ -310,6 +310,29 @@ html, body {
 }
 
 
+.fixed_menu {
+  font-size: 2rem;
+  padding: 5rem;
+  position: relative;
+}
+.fixed_menu > nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--black-light);
+  width: 100%;
+  display: flex;
+}
+.fixed_menu > nav a {
+  text-decoration: none;
+  color: white;
+  padding: 1.5rem;
+}
+.fixed_menu > nav a:hover {
+  background-color: var(--green);
+}
+
+
 @media only screen and (max-width: 750px) {
   .responsive_sidebar {
     padding-left: 2rem;

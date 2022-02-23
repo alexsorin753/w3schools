@@ -1034,6 +1034,18 @@ main {
 }
 
 
+.fixed_menu {
+  max-width: 140rem;
+  margin: 3rem auto;
+}
+.fixed_menu > iframe {
+  border: 3px solid var(--light_grey);
+  width: 100%;
+  height: 40rem;
+  overflow-y: auto;
+}
+
+
 @media only screen and (max-width: 750px) {
   .icon_bar > div {
     display: block;

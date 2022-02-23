@@ -219,3 +219,20 @@ block content
 		.bottom_navigation 
 			h2 Bottom Navigation #[a(href="/bottom-navbar" target="blank") #[i.fas.fa-external-link-alt]] 
 			iframe(src="/bottom-navbar", frameborder="0") 
+		.bottom_border_nav_links 
+			h2 Bottom Border Nav Links 
+			nav #[a.bottom_border_nav_links_active(href="#") Home] #[a(href="#") News] #[a(href="#") Contact]
+		.right_aligned_menu_links 
+			h2 Right Aligned Menu Links 
+			nav 
+				span #[a.right_aligned_menu_links_active(href="#") Home] #[a(href="#") News] #[a(href="#") Contact] 
+				span #[a(href="#") Search] #[a(href="#") About]
+		.centered_menu_link 
+			h2 Centered Menu Link 
+			nav 
+				span #[a(href="#") News] #[a(href="#") Contact]
+				a.centered_menu_link_active(href="#") Home 
+				span #[a(href="#") Search] #[a(href="#") About]
+		.equal_width_menu_links 
+			h2 Equal Width Menu Links 
+			nav #[a.equal_width_menu_links_active(href="#") Home] #[a(href="#") Search] #[a(href="#") Contact] #[a(href="#") About]

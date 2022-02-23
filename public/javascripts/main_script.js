@@ -4,7 +4,7 @@ window.onload = function() {
    const title = document.head.getElementsByTagName('TITLE')[0].textContent;
 
    if(title === "Menu") {
-      icon_bar(); menu_icon(); tabs(); vertical_tabs(); hover_tabs(); top_navigation(); responsive_navigation(); navbar_with_icons(); search_bar(); vertical_menu();
+      icon_bar(); menu_icon(); tabs(); vertical_tabs(); hover_tabs(); top_navigation(); responsive_navigation(); navbar_with_icons(); search_bar(); vertical_menu(); bottom_border_nav_links(); right_aligned_menu_links(); centered_menu_link(); equal_width_menu_links();
    }
 	if(title === "Filters") {
 		
@@ -534,6 +534,58 @@ function vertical_menu() {
 
 			if(active) active.classList.remove('vertical_menu_active');
 			link.classList.add('vertical_menu_active');
+		});
+	};
+};
+
+function bottom_border_nav_links() {
+	const links = document.querySelectorAll('.bottom_border_nav_links > nav a');
+
+	for(let link of links) {
+		link.addEventListener('click', function() {
+			const active = document.getElementsByClassName('bottom_border_nav_links_active')[0];
+
+			if(active) active.classList.remove('bottom_border_nav_links_active');
+			link.classList.add('bottom_border_nav_links_active');
+		});
+	};
+};
+
+function right_aligned_menu_links() {
+	const links = document.querySelectorAll('.right_aligned_menu_links > nav a');
+
+	for(let link of links) {
+		link.addEventListener('click', function() {
+			const active = document.getElementsByClassName('right_aligned_menu_links_active')[0];
+
+			if(active) active.classList.remove('right_aligned_menu_links_active');
+			link.classList.add('right_aligned_menu_links_active');
+		});
+	};
+};
+
+function centered_menu_link() {
+	const links = document.querySelectorAll('.centered_menu_link > nav a');
+
+	for(let link of links) {
+		link.addEventListener('click', function() {
+			const active = document.getElementsByClassName('centered_menu_link_active')[0];
+
+			if(active) active.classList.remove('centered_menu_link_active');
+			link.classList.add('centered_menu_link_active');
+		});
+	};
+};
+
+function equal_width_menu_links() {
+	const links = document.querySelectorAll('.equal_width_menu_links > nav a');
+
+	for(let link of links) {
+		link.addEventListener('click', function() {
+			const active = document.getElementsByClassName('equal_width_menu_links_active')[0];
+
+			if(active) active.classList.remove('equal_width_menu_links_active');
+			link.classList.add('equal_width_menu_links_active');
 		});
 	};
 };

@@ -927,12 +927,110 @@ main {
 
 .bottom_navigation {
   max-width: 140rem;
-  margin: auto;
+  margin: 3rem auto;
 }
 .bottom_navigation > iframe {
   width: 100%;
   height: 40rem;
   border: 3px solid var(--lighttest_grey);
+}
+
+
+.bottom_border_nav_links {
+  max-width: 140rem;
+  margin: 3rem auto;
+}
+.bottom_border_nav_links > nav {
+  background-color: var(--lighttest_grey);
+  display: flex;
+}
+.bottom_border_nav_links > nav a {
+  text-decoration: none;
+  color: black;
+  padding: 1.2rem 1.5rem;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+.bottom_border_nav_links > nav a:hover,
+.bottom_border_nav_links_active {
+  border-bottom: 3px solid var(--red_orange) !important;
+}
+
+
+.right_aligned_menu_links {
+  max-width: 140rem;
+  margin: 3rem auto;
+}
+.right_aligned_menu_links > nav {
+  background-color: var(--black_light);
+  display: flex;
+  justify-content: space-between;
+}
+.right_aligned_menu_links > nav span {
+  display: flex;
+}
+.right_aligned_menu_links > nav a {
+  text-decoration: none;
+  color: white;
+  padding: 1.5rem;
+}
+.right_aligned_menu_links > nav a:hover {
+  background-color: var(--light_grey);
+  color: var(--black_light);
+}
+.right_aligned_menu_links_active {
+  background-color: var(--green) !important;
+  color: white !important;
+}
+
+
+.centered_menu_link {
+  max-width: 140rem;
+  margin: 3rem auto;
+}
+.centered_menu_link > nav {
+  display: flex;
+  background-color: var(--black_light);
+  justify-content: space-between;
+}
+.centered_menu_link > nav span {
+  display: flex;
+}
+.centered_menu_link > nav a {
+  text-decoration: none;
+  color: white;
+  padding: 1.5rem;
+}
+.centered_menu_link > nav a:hover {
+  background-color: var(--light_grey);
+  color: var(--black_light);
+}
+.centered_menu_link_active {
+  background-color: var(--green) !important;
+  color: white !important;
+}
+
+
+.equal_width_menu_links {
+  max-width: 140rem;
+  margin: 3rem auto;
+}
+.equal_width_menu_links > nav {
+  display: flex;
+  background-color: var(--grey);
+}
+.equal_width_menu_links > nav a {
+  width: 25%;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+.equal_width_menu_links > nav a:hover {
+  background-color: black;
+}
+.equal_width_menu_links_active {
+  background-color: var(--green) !important;
 }
 
 
@@ -1009,6 +1107,16 @@ main {
   }
   .sidebar_with_icons > div > nav a {
     padding: 1rem 0;
+  }
+
+
+  .right_aligned_menu_links > nav span:nth-child(1) {
+    width: 60%;
+  }
+
+
+  .centered_menu_link > nav span {
+    width: 40%;
   }
 }
 /*#endregion menu*/
